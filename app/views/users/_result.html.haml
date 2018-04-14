@@ -1,5 +1,6 @@
-%div.results-block
-  = bootstrap_flash
+-if params[:action] == 'search'
+  %div.results-block
+    = bootstrap_flash
 - if @stock
   %div.well.results-block
     %strong Symbol:
@@ -8,3 +9,4 @@
     = @stock.name
     %strong Price:
     = @stock.last_price
+    = link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "btn btn-xs btn-success", method: :post
