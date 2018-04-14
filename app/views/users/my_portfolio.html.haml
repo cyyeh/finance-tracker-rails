@@ -2,20 +2,14 @@
 
 %h3 Search for Stocks
 %div#stock-lookup
-  =form_tag search_stocks_path, method: :get, id: "stock-lookup-form" do
-    %div.form-group.row.no-padding.text-center.col-md-12
-      %div.col-md-10
+  =form_tag search_stocks_path, remote: true, method: :get, id: "stock-lookup-form" do
+    %div.form-group.row.no-padding.text-center
+      %div.col-sm-10
         = text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control search-box input-lg"
-      %div.col-md-2
+      %div.col-sm-2
         = button_tag(type: :submit, class: "btn btn-lg btn-success") do
           %i.fa.fa-search 
           Look up a stock
 
-- if @stock
-  %div.well.results-block
-    %strong Symbol:
-    = @stock.ticker
-    %strong Name:
-    = @stock.name
-    %strong Price:
-    = @stock.last_price
+%div#results
+  = render 'result'
