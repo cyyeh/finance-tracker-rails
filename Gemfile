@@ -30,6 +30,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'haml-rails', '~> 1.0'
+gem 'devise'
+gem 'twitter-bootstrap-rails'
+gem 'jquery-rails'
+gem 'devise-bootstrap-views'
+gem 'stock_quote'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -56,4 +62,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "haml-rails", "~> 1.0"
